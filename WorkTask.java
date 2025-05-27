@@ -1,8 +1,11 @@
+import java.time.*;
+import java.util.ArrayList;
+
 public class WorkTask extends Task{
     
     private String teamMembers;
     
-    public String workTask(String title, String description, String deadline, int priority, String teamMembers){
+    public WorkTask(String title, String description, String deadline, int priority, String teamMembers){
         super("work", title, description, deadline, priority);
         this.teamMembers = teamMembers;
     }
@@ -17,11 +20,11 @@ public class WorkTask extends Task{
     
     @Override
     public String fileText(){
-        return type + "," + title + "," + description + "," + deadline + "," + priority + "," + teamMembers;
+        return "work" + "," + super.title + "," + super.description + "," + super.deadline + "," + super.priority + "," + teamMembers;
     }
     
     @Override
     public String toString(){
-        return type + " task | " + title + " | Priority " + priority + " | Due " + deadline + "\nDescription: " + description + "\nTeam Members: " + teamMembers; 
+        return "work task | " + super.title + " | Priority " + super.priority + " | Due " + super.deadline + "\nDescription: " + super.description + "\nTeam Members: " + teamMembers; 
     }
 }
