@@ -2,6 +2,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.time.*;
 import java.util.ArrayList;
+import java.io.BufferedReader;
+import java.io.FileReader;
 
 public class FileIO {
     
@@ -26,21 +28,28 @@ public class FileIO {
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))){
             
             String line;
+            
+            String type = "";
+            String title = "";
+            String description = "";
+            String deadline = "";
+            int priority = 0;
+            
             while ((line = reader.readLine()) != null){
                 String[] properties = line.split(",");
                 if (properties.length >= 5){
-                    String type = properties[0];
-                    String title = properties[1];
-                    String description = properties[2];
-                    String deadline = properties[3];
-                    int priority = Integer.parseInt(properties[4]);
+                    type = properties[0];
+                    title = properties[1];
+                    description = properties[2];
+                    deadline = properties[3];
+                    priority = Integer.parseInt(properties[4]);
                 }
                 Task task;
                 if (type.equals("work")){
                     task = new WorkTask(title, description, deadline, priority, properties[5]);
                 }
-                else if (type.equals("general")){
-                    task = new Task(title, description, deadline, priority);
+                else {
+                    task = new Task(type, title, description, deadline, priority);
                 }
                 tasks.add(task);
             }
@@ -50,6 +59,7 @@ public class FileIO {
             e.printStackTrace();
             System.out.println("There was an error while saving tasks. Try again.");
         }
+        return tasks;
     }
     
 }
