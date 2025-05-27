@@ -7,7 +7,8 @@ public class User {
     private ArrayList<Task> tasks = new ArrayList<Task>();
     private String[] categories = {"general/other", "work"};
     
-    public User(String username, int dailyGoal){
+    //public User(String username, int dailyGoal){
+    public User(String username){
         this.username = username;
     }
     
