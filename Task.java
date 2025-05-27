@@ -10,7 +10,7 @@ public class Task
     protected int priority;
     
     public Task(String type, String title, String description, String deadline, int priority){
-        type = "general";
+        type = this.type;
         this.title = title;
         this.description = description;
         this.deadline = deadline;
