@@ -1,10 +1,14 @@
 public class User {
     
-    private String user;
+    private String username;
     private ArrayList<Task> tasks = new ArrayList<Task>();
     
-    public User(String user, int dailyGoal){
-        this.user = user;
+    public User(String username, int dailyGoal){
+        this.username = username;
+    }
+    
+    public String getUsername(){
+        return username;
     }
     
     public String[] getCategories(){
