@@ -49,8 +49,17 @@ public class Task
         priority = s;
     }
     
+    public String getBlurb(){
+        return type + "task. " + "\"" + title + "\"" + " (Priority: " + priority, ", due " + deadline + ")";
+    }
+    
+    //format it is saved in the txt file with (comma delimiter)
+    public String fileText(){
+        return type + "," + title + "," + description + "," + deadline + "," + priority;
+    }
+    
     public String toString(){
-        return title + " | Priority " + priority + " | Due " + deadline + "\nDescription: " + description; 
+        return type + " task | " + title + " | Priority " + priority + " | Due " + deadline + "\nDescription: " + description; 
     }
     
 }
