@@ -1,16 +1,10 @@
-//WIP
-
 public class User {
     
     private String user;
     private ArrayList<Task> tasks = new ArrayList<Task>();
-    private int[][] dailyCompletion;
-    private int counter; //counts the daily tasks
     
     public User(String user, int dailyGoal){
         this.user = user;
-        dailyCompletion = new int[dailyGoal];
-        counter = 0;
     }
     
     public String[] getCategories(){
@@ -31,9 +25,6 @@ public class User {
     
     public void completeTask(int index){
         tasks.remove(index);
-        if (counter < dailyCompletion.length')
-        dailyCompletion[counter] = 1;
-        counter++;
+        //add completion log
     }
-    
 }
