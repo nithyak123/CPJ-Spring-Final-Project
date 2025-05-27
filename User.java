@@ -1,7 +1,11 @@
+import java.time.*;
+import java.util.ArrayList;
+
 public class User {
     
     private String username;
     private ArrayList<Task> tasks = new ArrayList<Task>();
+    private String[] categories = {"work", "general"};
     
     public User(String username, int dailyGoal){
         this.username = username;
