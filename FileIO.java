@@ -8,12 +8,16 @@ public class FileIO {
         
         try (FileWriter writer = new FileWriter(fileName)){
             for (Task t : u.getTasks()){
-                writer.write(t.toString() + "\n");
+                writer.write(t.fileText() + "\n");
             }
         }
         catch (IOException e){
             e.printStackTrace();
             System.out.println("There was an error while saving tasks. Try again.");
         }
+    }
+    
+    public static void loadTasksFromFile(String username){
+        
     }
 }
