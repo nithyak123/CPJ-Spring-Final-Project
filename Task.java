@@ -1,17 +1,20 @@
+import java.time.*;
+import java.util.ArrayList;
+
 public class Task
 {
-    private String type;
-    private String title;
-    private String description;
-    private String deadline;
-    private int priority;
+    protected String type;
+    protected String title;
+    protected String description;
+    protected String deadline;
+    protected int priority;
     
     public Task(String type, String title, String description, String deadline, int priority){
         type = "general";
-        this.title;
-        this.description;
-        this.deadline;
-        this.priority;
+        this.title = title;
+        this.description = description;
+        this.deadline = deadline;
+        this.priority = priority;
     }
     
     //date parsing
@@ -50,7 +53,7 @@ public class Task
     }
     
     public String getBlurb(){
-        return type + "task. " + "\"" + title + "\"" + " (Priority: " + priority, ", due " + deadline + ")";
+        return type + "task. " + "\"" + title + "\"" + " (Priority: " + priority + ", due " + deadline + ")";
     }
     
     //format it is saved in the txt file with (comma delimiter)
