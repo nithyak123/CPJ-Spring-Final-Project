@@ -14,4 +14,14 @@ public class WorkTask extends Task{
     public void setTeamMembers(String s){
         teamMembers = s;
     }
+    
+    @Override
+    public String fileText(){
+        return type + "," + title + "," + description + "," + deadline + "," + priority + "," + teamMembers;
+    }
+    
+    @Override
+    public String toString(){
+        return type + " task | " + title + " | Priority " + priority + " | Due " + deadline + "\nDescription: " + description + "\nTeam Members: " + teamMembers; 
+    }
 }
