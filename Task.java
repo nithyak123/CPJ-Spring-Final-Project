@@ -49,4 +49,8 @@ public class Task
         priority = s;
     }
     
+    public String toString(){
+        return title + " | Priority " + priority + " | Due " + deadline + "\nDescription: " + description; 
+    }
+    
 }
