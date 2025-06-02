@@ -12,6 +12,12 @@ public class User {
         this.username = username;
     }
     
+    //use when loading existing users
+    public User(String username, ArrayList<Task> tasks){
+        this.username = username;
+        this.tasks = tasks;
+    }
+    
     public String getUsername(){
         return username;
     }
