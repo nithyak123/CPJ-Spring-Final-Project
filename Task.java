@@ -1,5 +1,6 @@
 import java.time.*;
 import java.util.ArrayList;
+import java.time.format.DateTimeFormatter;
 
 public class Task
 {
@@ -10,7 +11,7 @@ public class Task
     protected int priority;
     
     public Task(String type, String title, String description, String deadline, int priority){
-        type = this.type;
+        this.type = type;
         this.title = title;
         this.description = description;
         this.deadline = deadline;
@@ -19,7 +20,8 @@ public class Task
     
     //date parsing
     public LocalDate getDueDateAsLocalDate(){
-        return LocalDate.parse(deadline);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+        return LocalDate.parse(deadline, formatter);
     }
     
     //getters
@@ -53,7 +55,7 @@ public class Task
     }
     
     public String getBlurb(){
-        return type + "task. " + "\"" + title + "\"" + " (Priority: " + priority + ", due " + deadline + ")";
+        return type + " task. " + "\"" + title + "\"" + " (Priority: " + priority + ", due " + deadline + ")";
     }
     
     //format it is saved in the txt file with (comma delimiter)
