@@ -13,7 +13,7 @@ public class Scheduler implements Schedulable {
                 priorityTask = currentTask;
             }
             else {
-                if (currentTask.getPriority() > priorityTask.getPriority()){
+                if (currentTask.getPriority() < priorityTask.getPriority()){
                     priorityTask = currentTask;
                 }
                 else if (currentTask.getPriority() == priorityTask.getPriority()){
@@ -34,7 +34,7 @@ public class Scheduler implements Schedulable {
                 lastTask = currentTask;
             }
             else {
-                if (currentTask.getPriority() < lastTask.getPriority()){
+                if (currentTask.getPriority() > lastTask.getPriority()){
                     lastTask = currentTask;
                 }
                 else if (currentTask.getPriority() == lastTask.getPriority()){
