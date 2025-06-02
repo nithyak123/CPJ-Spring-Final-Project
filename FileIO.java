@@ -16,12 +16,12 @@ public class FileIO {
             }
         }
         catch (IOException e){
-            e.printStackTrace();
             System.out.println("There was an error while saving tasks. Try again.");
+            System.exit(0);
         }
     }
     
-    public static ArrayList<Task> loadTasksFromFile(String username){
+    public static ArrayList<Task> loadTasksFromFile(String username) throws IOException{
         ArrayList<Task> tasks = new ArrayList<Task>();
         String fileName = username + "tasks.txt";
         
@@ -55,10 +55,10 @@ public class FileIO {
             }
         }
         
-        catch (IOException e){
-            e.printStackTrace();
-            System.out.println("There was an error while saving tasks. Try again.");
-        }
+        /*catch (IOException e){
+            System.out.println("\u001B[30mThere was an error while finding your account. Try again.");
+            System.exit(0);
+        }*/
         return tasks;
     }
     
