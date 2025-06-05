@@ -5,8 +5,17 @@ import java.util.ArrayList;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
+/**
+ * The class provides static methods for saving and loading tasks for a specific user to and from a text file
+ * @author Nithya Karambakkam
+ */
+
 public class FileIO {
-    
+
+    /**
+     * saves tasks for param u to a text file
+     * @param u the User whose tasks will be saved
+     */
     public static void saveTasksToFile(User u){
         String fileName = u.getUsername() + "tasks.txt";
         
@@ -20,7 +29,13 @@ public class FileIO {
             System.exit(0);
         }
     }
-    
+
+    /**
+     * loads tasks from a text file associated with the user
+     * @param username name of the user whose tasks are being loaded
+     * @return tasks an ArrayList with the tasks of the user listed in the text file
+     * @throws IOException if text file is not found
+     */
     public static ArrayList<Task> loadTasksFromFile(String username) throws IOException{
         ArrayList<Task> tasks = new ArrayList<Task>();
         String fileName = username + "tasks.txt";
