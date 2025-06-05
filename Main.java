@@ -2,6 +2,10 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.IOException;
 
+/**
+ * main method for the program
+ * @author Nithya Karambakkam
+ */
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
